@@ -1,0 +1,15 @@
+{
+  "name": "your-surname-cat-catcher",
+  "version": "1.0.0",
+  "description": "A Phaser game where players collect stars and avoid bombs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'Build step not defined'"
+  },
+  "dependencies": {
+    "phaser": "^3.60.0"
+  },
+  "author": "Your Surname",
+  "license": "MIT"
+}

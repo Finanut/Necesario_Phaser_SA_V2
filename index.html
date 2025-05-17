@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Catcher Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #fff;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        #game-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 10;
+            border: 2px solid #444;
+        }
+        
+        .game-title {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .control-key {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-right: 5px;
+            border: 1px solid #555;
+        }
+        
+        #loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: white;
+            font-size: 24px;
+            z-index: 100;
+        }
+        
+        .loader {
+            border: 5px solid #333;
+            border-top: 5px solid #ffd700;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- Include Phaser from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div id="loading">
+        <div class="loader"></div>
+        <div>Loading Game...</div>
+    </div>
+    
+    <!-- Game information -->
+    <div id="game-info">
+        <div class="game-title">Star Catcher Adventure</div>
+        <h3>Controls:</h3>
+        <p><span class="control-key">←</span><span class="control-key">→</span> Move left/right</p>
+        <p><span class="control-key">↑</span> Jump</p>
+        <p>Collect stars and avoid bombs!</p>
+        <p>Complete all 3 levels to win!</p>
+    </div>
+    
+    <!-- Your game will be inserted here by Phaser -->
+    
+    <!-- Import your JavaScript files as modules -->
+    <script type="module" src="src/main.js"></script>
+    
+    <!-- Hide loading screen when game is ready -->
+    <script>
+        window.addEventListener('load', function() {
+            // Give a little extra time for assets to load
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
